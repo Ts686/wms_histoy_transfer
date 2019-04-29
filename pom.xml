@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spark.version>2.3.0</spark.version>
-        <scala.version>2.11.8</scala.version>
+        <scala.version>2.11.12</scala.version>
         <scala.2.version>2.11</scala.2.version>
         <kafka.version>0.10.2.1</kafka.version>
         <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
