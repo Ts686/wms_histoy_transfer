@@ -1,0 +1,53 @@
+﻿<assembly
+		xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	<id>${project.version}.${timestamp}</id>
+	<!-- zip中包含目录 -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<dependencySets>
+		<dependencySet>
+			<!--是否把本项目添加到依赖文件夹下-->
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>${project.build.finalName}/lib</outputDirectory>
+			<!--将scope为runtime的依赖包打包-->
+			<scope>runtime</scope>
+			<!--<includes>-->
+				<!--<include>org.apache.spark:spark-sql-kafka-0-10_2.11</include>-->
+				<!--<include>org.apache.commons:commons-pool2</include>-->
+				<!--<include>com.alibaba:fastjson</include>-->
+				<!--<include>com.typesafe:config</include>-->
+				<!--<include>com.darwinsys:hirondelle-date4j</include>-->
+				<!--<include>com.oracle:ojdbc6</include>-->
+			<!--</includes>-->
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>target</directory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+			<outputDirectory>${project.build.finalName}/lib</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>target/${project.build.finalName}</directory>
+			<outputDirectory>/${project.build.finalName}</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/resources</directory>
+			<outputDirectory>conf</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>bin</directory>
+			<outputDirectory>bin</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>doc</directory>
+			<outputDirectory>doc</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>
