@@ -1,10 +1,10 @@
-package cn.wonhigh.test
+package cn.wonhigh.exercise
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
-  * wordCount 程序 scala版本
+  * wordCount 程序排序 scala版本
   *
   */
 object SortWordCountDemo {

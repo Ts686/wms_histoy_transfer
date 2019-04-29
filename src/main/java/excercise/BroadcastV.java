@@ -1,3 +1,5 @@
+package excercise;
+
 import org.apache.spark.Accumulator;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;

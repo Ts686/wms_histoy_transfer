@@ -1,3 +1,5 @@
+package excercise;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -34,7 +36,7 @@ public class SortWordCountDemo {
         JavaPairRDD<String, Integer> mapPairRes = flatRes.mapToPair(new PairFunction<String, String, Integer>() {
             @Override
             public Tuple2<String, Integer> call(String word) throws Exception {
-                return new Tuple2<>(word, 1);
+                return new Tuple2<String, Integer>(word, 1);
             }
         });
         System.out.println("tuple后共：" + mapPairRes.count());
