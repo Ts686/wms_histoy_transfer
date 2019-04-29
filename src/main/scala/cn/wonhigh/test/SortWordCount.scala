@@ -12,7 +12,8 @@ object SortWordCount {
     val wordValRdd: RDD[(String, Int)] = wordsRdd.map(word => (word, 1))
     val reduceRes: RDD[(String, Int)] = wordValRdd.reduceByKey(_ + _)
     val reverseRes: RDD[(Int, String)] = reduceRes.map(t => (t._2, t._1))
-    val value: RDD[(Int, String)] = reverseRes.sortByKey(false)
-    println(value)
+    val sortRes: RDD[(Int, String)] = reverseRes.sortByKey(false)
+    val res: RDD[(String, Int)] = sortRes.map(t => (t._2, t._1))
+    println(res)
   }
 }
